@@ -14,6 +14,9 @@ $.ajax(geniusAPI).done(function (response) {
     console.log(response.hits[0].result.path)
 });
 
+
+function displayMusicInfo() {
+
 var songName = "enemy league"
 
 const deezerAPI = {
@@ -51,4 +54,4 @@ $.ajax(deezerAPI).then(function (response) {
 	audioEl.append(songSample)
 	$("#song-container").append(title, albumImage, artist, audioEl);
 	// $("#mp3").append(audioEl)
-});
+})};
