@@ -1,3 +1,5 @@
+function displayLyrics() {
+
 const geniusAPI = {
   async: true,
   crossDomain: true,
@@ -15,7 +17,7 @@ $.ajax(geniusAPI)
     songID = response.hits[0].result.id;
     console.log(songID);
   })
-  .then(function (response) {
+  .then(function () {
     const lyrics = {
       async: true,
       crossDomain: true,
@@ -37,12 +39,14 @@ $.ajax(geniusAPI)
       );
       lyricsContainer.append(songLyrics);
     });
-  });
+  })};
 
-function displayMusicInfo() {
-  var songName = "enemy league";
+  
+  function displayMusicInfo() {
+    var songName = $("#formGroupExampleInput").val().trim();
+    console.log(songName)
 
-  const deezerAPI = {
+    const deezerAPI = {
     async: true,
     crossDomain: true,
     url: "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + songName,
@@ -64,16 +68,16 @@ function displayMusicInfo() {
       .text("Song: " + response.data[0].title);
 
     var albumImage = $("<img>")
-      .addClass("album-image")
-      .attr("src", response.data[0].album.cover_big)
+    .addClass("album-image")
+    .attr("src", response.data[0].album.cover_big)
       .css({ "border-radius": "10px", height: "300px" });
-
+      
     var artist = $("<div>")
       .addClass("artist text-center")
       .text("Artist: " + response.data[0].artist.name);
 
     // audio element
-
+    
     var audioEl = $("<audio>").attr("controls", "");
 
     var songSample = $("<source>").attr({
@@ -87,4 +91,12 @@ function displayMusicInfo() {
     // $("#mp3").append(audioEl)
   });
 }
+
+var searchButton = $("#search-button")
+
+searchButton.on("click", function(event){
+  event.preventDefault()
+  displayLyrics()
 displayMusicInfo();
+
+})
