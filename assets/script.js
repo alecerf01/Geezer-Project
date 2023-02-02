@@ -1,5 +1,5 @@
 const geniusAPI = {
-  <<<<<<< geniusBranch
+  
   async: true,
   crossDomain: true,
   url: "https://genius-song-lyrics1.p.rapidapi.com/search/?q=enemy&per_page=10&page=1",
@@ -15,25 +15,7 @@ $.ajax(geniusAPI).done(function (response) {
   console.log(response.hits[0].result.path);
 });
 
-var songName = "enemy league";
-=======
-	"async": true,
-	"crossDomain": true,
-	"url": "https://genius-song-lyrics1.p.rapidapi.com/search/?q=enemy&per_page=10&page=1",
-	"method": "GET",
-	"headers": {
-		"X-RapidAPI-Key": geniusAPIKey,
-		"X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com"
-	}
-};
-
-$.ajax(geniusAPI).done(function (response) {
-	console.log(response);
-    console.log(response.hits[0].result.path)
-});
-
 var songName = "enemy league"
-  >>>>>>> main
 
 const deezerAPI = {
   async: true,
