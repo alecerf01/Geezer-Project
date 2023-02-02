@@ -8,11 +8,36 @@ const geniusAPI = {
     "X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
   },
 };
+let songID;
 
-$.ajax(geniusAPI).then(function (response) {
-  let songID = response.hits[0].result.id;
-  console.log(songID);
-});
+$.ajax(geniusAPI)
+  .then(function (response) {
+    songID = response.hits[0].result.id;
+    console.log(songID);
+  })
+  .then(function (response) {
+    const lyrics = {
+      async: true,
+      crossDomain: true,
+      url:
+        "https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=" + songID,
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": deezerAPIKey,
+        "X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
+      },
+    };
+
+    $.ajax(lyrics).done(function (response) {
+      console.log(response);
+      let songLyrics = response.lyrics.lyrics.body.html;
+      console.log(songLyrics);
+      let lyricsContainer = $("#lyrics-container").addClass(
+        "text-center overflow-auto"
+      );
+      lyricsContainer.append(songLyrics);
+    });
+  });
 
 function displayMusicInfo() {
   var songName = "enemy league";
@@ -62,3 +87,4 @@ function displayMusicInfo() {
     // $("#mp3").append(audioEl)
   });
 }
+displayMusicInfo();
