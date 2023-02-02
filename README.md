@@ -5,6 +5,6 @@
 
 
 ### Credits
-Alexis and David (mostly)
-Danny
-Chris
+#### Alexis and David (mostly)
+#### Danny
+#### Chris
