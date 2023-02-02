@@ -1,18 +1,18 @@
-// const geniusAPI = {
-// 	"async": true,
-// 	"crossDomain": true,
-// 	"url": "https://genius-song-lyrics1.p.rapidapi.com/search/?q=enemy&per_page=10&page=1",
-// 	"method": "GET",
-// 	"headers": {
-// 		"X-RapidAPI-Key": "8053b157d6mshabf6994a388aac1p1441a0jsn89c2ee3a673d",
-// 		"X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com"
-// 	}
-// };
+const geniusAPI = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://genius-song-lyrics1.p.rapidapi.com/search/?q=enemy&per_page=10&page=1",
+	"method": "GET",
+	"headers": {
+		"X-RapidAPI-Key": geniusAPIKey,
+		"X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com"
+	}
+};
 
-// $.ajax(geniusAPI).done(function (response) {
-// 	console.log(response);
-//     console.log(response.hits[0].result.path)
-// });
+$.ajax(geniusAPI).done(function (response) {
+	console.log(response);
+    console.log(response.hits[0].result.path)
+});
 
 var songName = "enemy league"
 
