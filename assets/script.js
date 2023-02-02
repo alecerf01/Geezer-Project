@@ -4,14 +4,14 @@ const geniusAPI = {
   url: "https://genius-song-lyrics1.p.rapidapi.com/search/?q=enemy&per_page=10&page=1",
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": apiKey,
+    "X-RapidAPI-Key": deezerAPIKey,
     "X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
   },
 };
 
-$.ajax(geniusAPI).done(function (response) {
-  console.log(response);
-  console.log(response.hits[0].result.path);
+$.ajax(geniusAPI).then(function (response) {
+  let songID = response.hits[0].result.id;
+  console.log(songID);
 });
 
 function displayMusicInfo() {
@@ -46,5 +46,19 @@ function displayMusicInfo() {
     var artist = $("<div>")
       .addClass("artist text-center")
       .text("Artist: " + response.data[0].artist.name);
+
+    // audio element
+
+    var audioEl = $("<audio>").attr("controls", "");
+
+    var songSample = $("<source>").attr({
+      src: response.data[0].preview,
+      type: "audio/mpeg",
+    });
+
+    // Appending elements to HTML body
+    audioEl.append(songSample);
+    $("#song-container").append(title, albumImage, artist, audioEl);
+    // $("#mp3").append(audioEl)
   });
 }
