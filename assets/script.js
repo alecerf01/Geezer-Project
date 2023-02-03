@@ -93,6 +93,10 @@ $.ajax(geniusAPI)
     });
   })};
 
+  function renderButtons() {
+    historyButton = $("<button>").addClass("history-button btn btn-success col-lg-10").attr("data-name", songName).text(songName);
+    $("#button-history-container").append(historyButton);
+  }
   
 
 var searchButton = $("#search-button")
@@ -105,5 +109,6 @@ searchButton.on("click", function(event){
 
   displayMusicInfo();
   displayLyrics();
+  renderButtons()
 
 })
