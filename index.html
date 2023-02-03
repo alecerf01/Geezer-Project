@@ -19,28 +19,29 @@
     <header class="container-fluid text-center text-white p-2 weather-header">
       <div class="row">
         <h1 class="col-lg-2">Geezer</h1>
-        <form class="col-lg-10">
+        <form class="col-lg-8">
+          
           <input
             type="text"
             class="form-control"
             id="formGroupExampleInput"
             placeholder="Song Name"
           />
-          <button id="search-button" class="btn btn-success">Search</button>
+          
+            <button type="submit" id="search-button" class="btn btn-success">Search</button>
+          
         </form>
       </div>
     </header>
 
     <div id="main-container" class="container-fluid">
       <div class="row">
-        <div id="song-container" class="col-lg-3">
-          <div id="mp3"></div>
-        </div>
+        <div id="song-container" class="col-lg-3"></div>
         <div id="lyrics-container" class="col-lg-7 text-center"></div>
         <div id="button-history" class="col-lg-2"></div>
       </div>
     </div>
-    <div id="mp3"></div>
+    
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
