@@ -15,7 +15,7 @@ function displayMusicInfo() {
 
   $.ajax(deezerAPI).then(function (response) {
     $("#song-container").empty();
-    console.log(response.data[0].title);
+
     console.log(response);
 
     // song data
@@ -97,13 +97,16 @@ function displayLyrics() {
     });
 }
 
-function renderButtons() {
+function renderButtons(text) {
   historyButton = $("<button>")
     .addClass("history-button btn btn-success col-lg-10")
-    .attr("data-name", songName)
-    .text(songName);
+    .attr("data-name", text)
+    .text(text);
   $("#button-history-container").append(historyButton);
 }
+
+var buttonHistory = JSON.parse(localStorage.getItem("song-name")) || [];
+buttonHistory.forEach(renderButtons);
 
 var searchButton = $("#search-button");
 
@@ -115,5 +118,19 @@ searchButton.on("click", function (event) {
 
   displayMusicInfo();
   displayLyrics();
-  renderButtons();
+  if (!buttonHistory.includes(songName)) {
+    renderButtons(songName);
+
+    buttonHistory.push(songName);
+    console.log(buttonHistory);
+    localStorage.setItem("song-name", JSON.stringify(buttonHistory));
+  }
 });
+
+$("#button-history-container").on("click", "button", function () {
+  console.log(this.textContent);
+});
+
+
+// localStorage.removeItem("song-name") clears only local storage with key that is passed
+// localStorage.clear()  clears all local storage
