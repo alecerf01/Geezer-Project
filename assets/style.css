@@ -1,56 +1,58 @@
 body {
-    background-color: #012E40;
+  background-color: #012e40;
 }
 
 h1 {
-    color: #3CA6A6!important;
+  color: #3ca6a6 !important;
 }
 
 .song-name,
 .artist {
-    font-weight: bold;
-    font-size: 30px;
-    color: #f2e3d5;
+  font-weight: bold;
+  font-size: 30px;
+  color: #f2e3d5;
 }
 
 audio::-webkit-media-controls-panel {
-    background-color: #3CA6A6;
+  background-color: #3ca6a6;
 }
 
 audio::-webkit-media-controls-timeline {
-    color: white;
+  color: white;
 }
 
 #main-container {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
 .album-image,
 .artist,
 audio {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .album-image,
 audio {
-    display: block;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 .button-history {
-    margin-top: 30px;
-    margin-right: 20px;
+  margin-top: 30px;
+  margin-right: 20px;
 }
 
 a,
 p {
-    text-decoration: none;
-    color: #f2e3d5;
-    font-weight: bold;
-    font-size: 20px;
+  text-decoration: none;
+  color: #f2e3d5;
+  font-weight: bold;
+  font-size: 20px;
+  pointer-events: none;
+  cursor: default;
 }
 
 .history-button {
-    margin-top: 30px;
+  margin-top: 30px;
 }
