@@ -8,6 +8,8 @@
 
 
 ## Credits
+
+Click [here](https://alecerf01.github.io/Geezer-Project/) to go to my page.
 ##### Alexis and David (mostly)
 ##### Danny
 ##### Chris
