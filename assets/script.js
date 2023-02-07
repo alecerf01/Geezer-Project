@@ -49,7 +49,7 @@ function displayMusicInfo() {
 
     // Appending elements to HTML body
     audioEl.append(songSample);
-    $("#song-container").append(title, albumImage, artist, audioEl);
+    $("#song-container").append(albumImage, title, artist, audioEl);
     // $("#mp3").append(audioEl)
   });
 }

@@ -11,10 +11,15 @@ h1 {
   color: #012e40 !important;
 }
 
-.song-name,
-.artist {
-  font-weight: bold;
+.song-name {
+  font-weight: 500;
   font-size: 30px;
+  color: #f2e3d5;
+}
+
+.artist {
+  font-weight: 400;
+  font-size: 18px;
   color: #f2e3d5;
 }
 
