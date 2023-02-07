@@ -88,6 +88,9 @@ button:hover {
   border-radius: 20px;
   background-color: #012e40;
   border: solid #f2e3d5 3px;
+  width: 60%;
+  display: block;
+  margin: auto;
 }
 
 input {
