@@ -1,3 +1,8 @@
+var buttonHistory = JSON.parse(localStorage.getItem("song-name")) || [];
+buttonHistory.forEach(renderButtons);
+
+var searchButton = $("#search-button");
+
 // ! Displays Artist Info
 function displayMusicInfo() {
   console.log(songName);
@@ -48,6 +53,7 @@ function displayMusicInfo() {
     // $("#mp3").append(audioEl)
   });
 }
+
 // ! Displays the Lyrics
 function displayLyrics() {
   const geniusAPI = {
@@ -89,12 +95,11 @@ function displayLyrics() {
         console.log(response);
         let songLyrics = response.lyrics.lyrics.body.html;
         console.log(songLyrics);
-        $("#lyrics-container")
-          .addClass("text-center overflow-auto")
-          .append(songLyrics);
+        $("#lyrics-container").addClass("text-center").append(songLyrics);
       });
     });
 }
+
 // ! Creates the buttons after a new search
 function renderButtons(text) {
   historyButton = $("<button>")
@@ -104,10 +109,6 @@ function renderButtons(text) {
   $("#button-history-container").append(historyButton);
 }
 
-var buttonHistory = JSON.parse(localStorage.getItem("song-name")) || [];
-buttonHistory.forEach(renderButtons);
-
-var searchButton = $("#search-button");
 // ! Search function
 searchButton.on("click", function (event) {
   event.preventDefault();
@@ -125,12 +126,10 @@ searchButton.on("click", function (event) {
     localStorage.setItem("song-name", JSON.stringify(buttonHistory));
   }
 });
+
 // ! History button click event
 $("#button-history-container").on("click", "button", function () {
   songName = $(this).text();
   displayMusicInfo();
   displayLyrics();
 });
-
-// localStorage.removeItem("song-name") clears only local storage with key that is passed
-// localStorage.clear()  clears all local storage
