@@ -8,7 +8,7 @@ h1 {
 }
 
 #exampleModalLabel {
-  color: #012e40!important;
+  color: #012e40 !important;
 }
 
 .song-name,
@@ -73,10 +73,10 @@ p {
 }
 
 button {
-  border-radius: 20px!important;
-  font-weight: bold!important;
-  background-color: #012e40!important;
-  border: solid #f2e3d5 3px!important;
+  border-radius: 20px !important;
+  font-weight: bold !important;
+  background-color: #012e40 !important;
+  border: solid #f2e3d5 3px !important;
 }
 
 button:hover {
@@ -91,15 +91,23 @@ button:hover {
 }
 
 input {
-  color: #f2e3d5!important;
+  color: #f2e3d5 !important;
 }
 
 ::placeholder {
-  color: #f2e3d5!important;
-  opacity: 1!important;
+  color: #f2e3d5 !important;
+  opacity: 1 !important;
 }
 
-#lyrics-container.scroll {
-  overflow-x: hidden;
-  overflow-y: hidden;
+#lyrics-container {
+  height: 600px;
+  overflow-y: auto !important;
+}
+
+#lyrics-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+#lyrics-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
