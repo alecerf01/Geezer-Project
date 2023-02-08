@@ -23,7 +23,7 @@ function displayMusicInfo() {
     headers: {
 
       // set developer API key from rapid API
-      "X-RapidAPI-Key": deezerAPIKey,
+      "X-RapidAPI-Key": "8053b157d6mshabf6994a388aac1p1441a0jsn89c2ee3a673d",
       "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
     },
   };
@@ -84,7 +84,7 @@ function displayLyrics() {
 
       // set developer API key from rapid API
 
-      "X-RapidAPI-Key": deezerAPIKey,
+      "X-RapidAPI-Key": "8053b157d6mshabf6994a388aac1p1441a0jsn89c2ee3a673d",
       "X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
     },
   };
@@ -108,7 +108,7 @@ function displayLyrics() {
           songID,
         method: "GET",
         headers: {
-          "X-RapidAPI-Key": deezerAPIKey,
+          "X-RapidAPI-Key": "8053b157d6mshabf6994a388aac1p1441a0jsn89c2ee3a673d",
           "X-RapidAPI-Host": "genius-song-lyrics1.p.rapidapi.com",
         },
       };
