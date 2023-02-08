@@ -27,7 +27,7 @@ function displayMusicInfo() {
 
     var title = $("<div>")
       .addClass("song-name text-center")
-      .text("Song: " + response.data[0].title);
+      .text(response.data[0].title);
 
     var albumImage = $("<img>")
       .addClass("album-image")
@@ -36,7 +36,7 @@ function displayMusicInfo() {
 
     var artist = $("<div>")
       .addClass("artist text-center")
-      .text("Artist: " + response.data[0].artist.name);
+      .text(response.data[0].artist.name);
 
     // audio element
 
@@ -103,14 +103,35 @@ function displayLyrics() {
 // ! Creates the buttons after a new search
 function renderButtons(text) {
   historyButton = $("<button>")
-    .addClass("history-button btn btn-success col-lg-10")
+    .addClass("history-button btn btn-success col-xl-12")
     .attr("data-name", text)
     .text(text);
   $("#button-history-container").append(historyButton);
 }
 
-// ! Search function
+// ! Search function button click
 searchButton.on("click", function (event) {
+  event.preventDefault();
+  songName = $("#formGroupExampleInput").val().trim();
+  // lyricsContainer.empty();
+  // $("#song-container").empty();
+
+  displayMusicInfo();
+  displayLyrics();
+  if (!buttonHistory.includes(songName)) {
+    renderButtons(songName);
+
+    buttonHistory.push(songName);
+    console.log(buttonHistory);
+    localStorage.setItem("song-name", JSON.stringify(buttonHistory));
+  }
+});
+
+
+// ! Search function for form submit
+var input = $("#search-input")
+
+input.on("submit", function (event) {
   event.preventDefault();
   songName = $("#formGroupExampleInput").val().trim();
   // lyricsContainer.empty();
