@@ -12,15 +12,18 @@ h1 {
 }
 
 .song-name {
+  margin-top: 20px;
   font-weight: 500;
   font-size: 30px;
   color: #f2e3d5;
+  font-family: "Questrial", sans-serif;
 }
 
 .artist {
   font-weight: 400;
   font-size: 18px;
   color: #f2e3d5;
+  font-family: "Questrial", sans-serif;
 }
 
 audio::-webkit-media-controls-panel {
@@ -75,19 +78,13 @@ p {
 
 #search-button {
   width: 80%;
-}
-
-button {
   border-radius: 20px !important;
   font-weight: bold !important;
   background-color: #012e40 !important;
   border: solid #f2e3d5 3px !important;
 }
 
-button:hover {
-  background-color: #3ca6a6;
-  transition: all ease-in-out;
-}
+
 
 #formGroupExampleInput {
   border-radius: 20px;
@@ -130,4 +127,24 @@ footer {
   display: flex;
   justify-content: center;
   color: #f2e3d5;
+}
+
+.history-button {
+  border-radius: 20px !important;
+  font-weight: bold !important;
+  background-color: #012e40 !important;
+  border: solid #f2e3d5 3px !important;
+}
+
+.history-button::before,
+#search-button::before {
+  content: ""!important;
+  position: absolute!important;
+  background: #3ca6a6!important;
+}
+
+.history-button:hover,
+#search-button:hover {
+  background-color: #3ca6a6!important;
+  transition: all ease-in-out 250ms!important;
 }
