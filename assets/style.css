@@ -1,5 +1,6 @@
 body {
   background-color: #012e40;
+  max-width: 2000px;
 }
 
 h1 {
@@ -67,10 +68,6 @@ p {
   font-family: "Questrial", sans-serif;
 }
 
-.history-button {
-  margin-top: 30px;
-}
-
 #search-div,
 #search-input {
   margin-top: 10px;
@@ -78,7 +75,7 @@ p {
 
 #search-button {
   width: 80%;
-  border-radius: 20px !important;
+  border-radius: 10px !important;
   font-weight: bold !important;
   background-color: #012e40 !important;
   border: solid #f2e3d5 3px !important;
@@ -87,20 +84,20 @@ p {
 
 
 #formGroupExampleInput {
-  border-radius: 20px;
-  background-color: #012e40;
-  border: solid #f2e3d5 3px;
+  border-radius: 10px;
+  background-color: #f2e3d5;
+  border: solid #3ca6a6 3px;
   width: 60%;
   display: block;
   margin: auto;
 }
 
 input {
-  color: #f2e3d5 !important;
+  color: #000 !important;
 }
 
 ::placeholder {
-  color: #f2e3d5 !important;
+  color: #000 !important;
   opacity: 1 !important;
 }
 
@@ -134,17 +131,21 @@ footer {
   font-weight: bold !important;
   background-color: #012e40 !important;
   border: solid #f2e3d5 3px !important;
+  width: 40%;
+  display: block;
+  margin: auto;
+  margin-top: 30px!important;
 }
 
 .history-button::before,
 #search-button::before {
   content: ""!important;
-  position: absolute!important;
-  background: #3ca6a6!important;
+ 
+  background-image: linear-gradient(90deg, #3ca6a6 , #f2e3d5)!important;
 }
 
 .history-button:hover,
 #search-button:hover {
-  background-color: #3ca6a6!important;
+  background-image: linear-gradient(90deg,#3ca6a6 , #f2e3d5)!important;
   transition: all ease-in-out 250ms!important;
 }
