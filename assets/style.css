@@ -1,32 +1,35 @@
+/*body styling*/
 body {
   background-color: #012e40;
   max-width: 2000px;
-}
-
-h1 {
-  color: #f2e3d5 !important;
   font-family: "Questrial", sans-serif;
 }
+/*styles the h1 tags*/
+h1 {
+  color: #f2e3d5 !important;
+  }
 
 #exampleModalLabel {
   color: #012e40 !important;
 }
-
+/*styles the song-name*/
 .song-name {
   margin-top: 20px;
   font-weight: 500;
   font-size: 30px;
   color: #f2e3d5;
-  font-family: "Questrial", sans-serif;
+  
 }
 
+/*styles the text for song artist*/
 .artist {
   font-weight: 400;
   font-size: 18px;
   color: #f2e3d5;
-  font-family: "Questrial", sans-serif;
+  
 }
 
+/*styles the audio player*/
 audio::-webkit-media-controls-panel {
   background-color: #3ca6a6;
 }
@@ -35,6 +38,7 @@ audio::-webkit-media-controls-timeline {
   color: white;
 }
 
+/*styles the main container id*/
 #main-container {
   margin-top: 100px;
 }
@@ -52,11 +56,7 @@ audio {
   margin-right: auto;
 }
 
-.button-history {
-  margin-top: 30px;
-  margin-right: 20px;
-}
-
+/*styles the lyrcs-container*/
 #lyrics-container a,
 p {
   text-decoration: none;
@@ -65,7 +65,7 @@ p {
   font-size: 20px;
   pointer-events: none;
   cursor: default;
-  font-family: "Questrial", sans-serif;
+  
 }
 
 #search-div,
@@ -73,16 +73,8 @@ p {
   margin-top: 10px;
 }
 
-#search-button {
-  width: 80%;
-  border-radius: 10px !important;
-  font-weight: bold !important;
-  background-color: #012e40 !important;
-  border: solid #f2e3d5 3px !important;
-}
 
-
-
+/*styles the form input*/
 #formGroupExampleInput {
   border-radius: 10px;
   background-color: #f2e3d5;
@@ -90,9 +82,6 @@ p {
   width: 60%;
   display: block;
   margin: auto;
-}
-
-input {
   color: #000 !important;
 }
 
@@ -101,15 +90,19 @@ input {
   opacity: 1 !important;
 }
 
+/*create a faded effect at the bottom of the lyrics*/
 #lyrics-container {
   height: 600px;
   overflow-y: auto !important;
   -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
+  margin-top: 20px !important;
 }
 
+/*create invisible scrollbar for the container*/
 #lyrics-container::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
 #lyrics-container {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -126,6 +119,7 @@ footer {
   color: #f2e3d5;
 }
 
+/*styling for all history and search buttons*/
 .history-button {
   border-radius: 20px !important;
   font-weight: bold !important;
@@ -148,4 +142,17 @@ footer {
 #search-button:hover {
   background-image: linear-gradient(90deg,#3ca6a6 , #f2e3d5)!important;
   transition: all ease-in-out 250ms!important;
+}
+
+.button-history {
+  margin-top: 30px;
+  margin-right: 20px;
+}
+
+#search-button {
+  width: 80%;
+  border-radius: 10px !important;
+  font-weight: bold !important;
+  background-color: #012e40 !important;
+  border: solid #f2e3d5 3px !important;
 }
